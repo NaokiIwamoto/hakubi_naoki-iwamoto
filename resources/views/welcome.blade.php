@@ -1,6 +1,10 @@
 @extends('layouts.app')
 
 @section('content')
+
+<head>
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
+</head>
 <div id="welcom_background">
     <div class="row">
         <div class="col-sm-9"></div>

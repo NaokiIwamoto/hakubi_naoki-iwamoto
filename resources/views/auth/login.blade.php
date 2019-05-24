@@ -2,7 +2,6 @@
 
 @section('content')
 <div class="container">
-    <div></div>
     <div class="row justify-content-center">
         <div class="col-md-6 border-right">
             <h1 class="display-4 text-center">Log in</h2>
@@ -43,15 +42,12 @@
                                 <button type="submit" class="btn btn-primary">
                                     {{ __('Login') }}
                                 </button>
-
-                                @if (Route::has('password.request'))
-                                <a class="btn btn-link" href="{{ route('password.request') }}">
-                                    {{ __('Forgot Your Password?') }}
-                                </a>
-                                @endif
                             </div>
                         </div>
                     </form>
+                    <div>
+                        <img src="/images/stone.jpg" alt="stone" class="img-fluid">
+                    </div>
                 </div>
         </div>
         <div class="col-md-6">
