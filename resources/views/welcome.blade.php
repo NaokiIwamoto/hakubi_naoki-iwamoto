@@ -1,12 +1,9 @@
 @extends('layouts.app')
 
-<<<<<<< 4b32180afca8919e6d86978c7bbca9405cc4035c
 @section('css')
 <link rel="stylesheet" href="{{ asset('css/welcome.css') }}">
 @endsection
 
-=======
->>>>>>> register/login
 @section('content')
 <div id="welcom_background">
     <div class="row">

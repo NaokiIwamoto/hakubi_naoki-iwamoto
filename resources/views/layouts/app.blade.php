@@ -19,26 +19,12 @@
 
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    @yield('css')
 </head>
 
-<<<<<<< 4b32180afca8919e6d86978c7bbca9405cc4035c
 <body class="bg-white">
     <div id=" app">
         <nav class="bg-light navbar navbar-expand-md navbar-light navbar-laravel">
-=======
-<style>
-    #welcom_background {
-        background: linear-gradient(to Right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.7) 75%, rgba(0, 0, 0, 0.7)), url(/images/tokyo2020.jpg);
-        background-size: cover;
-        height: 500px;
-        max-width: 100%;
-    }
-</style>
-
-<body>
-    <div id="app">
-        <nav class="navbar navbar-expand-md navbar-light navbar-laravel">
->>>>>>> register/login
             <div class="container">
                 <a class="navbar-brand" href="{{ url('/') }}">
                     {{ config('app.name', 'Laravel') }}
@@ -48,14 +34,11 @@
                 </button>
 
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
-<<<<<<< 4b32180afca8919e6d86978c7bbca9405cc4035c
-=======
                     <!-- Left Side Of Navbar -->
                     <ul class="navbar-nav mr-auto">
 
                     </ul>
 
->>>>>>> register/login
                     <!-- Right Side Of Navbar -->
                     <ul class="navbar-nav ml-auto">
                         <!-- Authentication Links -->
@@ -86,11 +69,7 @@
             </div>
         </nav>
 
-<<<<<<< 4b32180afca8919e6d86978c7bbca9405cc4035c
         <main>
-=======
-        <main class="py-4">
->>>>>>> register/login
             @yield('content')
         </main>
     </div>

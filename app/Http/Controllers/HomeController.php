@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -23,14 +25,12 @@ class HomeController extends Controller
      */
     public function index()
     {
-<<<<<<< 4b32180afca8919e6d86978c7bbca9405cc4035c
         if (auth()->user()->admin == True) {
-            return view('admin.admin_home');
+            $auth_id = Auth::user()->id;
+            $admins = User::where('admin',true)->where('id', '!=', $auth_id)->get();
+            return view('admin.admin_home',compact('admins'));
         } else {
             return view('home');
         }
-=======
-        return view('home');
->>>>>>> register/login
     }
 }

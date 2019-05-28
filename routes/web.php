@@ -18,3 +18,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/admin/add_admin_user', 'UserController@open_add_admin_page')->name('admin_add');
+Route::post('/admin/add_admin_user/register', 'UserController@admin_register')->name('admin_register');
+Route::get('/admin/category', 'CategoryController@open_category_admin')->name('open_category_admin');
+Route::get('/admin/category/add_category', 'CategoryController@add_category_admin')->name('add_category_admin');
+Route::post('/admin/category/add_category/store', 'CategoryController@open_category_admin')->name('store_category_admin');
