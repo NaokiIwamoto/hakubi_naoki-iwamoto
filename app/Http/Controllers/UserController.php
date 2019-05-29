@@ -15,12 +15,12 @@ class UserController extends Controller
     }
     public function admin_register(FromSendRequest $request)
     {
-        $admin = new User;
-        $admin->name = $request->input('name');
-        $admin->email = $request->input('email');
-        $admin->password = Hash::make($request->input('password'));
-        $admin->admin = true;
-        $admin->save();
+        User::create([
+            'name' => $request['name'],
+            'email' => $request['email'],
+            'admin' => true,
+            'password' => Hash::make($request['password']),
+        ]);
         return redirect('/home');
     }
 }

@@ -1,5 +1,9 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/home.css') }}">
+@endsection
+
 @section('content')
 <div class="container py-4">
     <div class="row">
@@ -7,7 +11,7 @@
             <div class="rounded p-4" style="background-color:white">
                 <div class="body text-center">
                     <div class="py-1">
-                        <img class="rounded img-thumbnail" src="/images/account.png" alt="account" style="width:100px; heigh:100px;">
+                        <img class="rounded img-thumbnail account" src="/images/account.png" alt="account">
                     </div>
                     <div class="dropdown-divider py-1"></div>
                     <div class="card-body">
@@ -32,7 +36,7 @@
                         <div class="list-group-item list-group-item-action mb-3 rounded">
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <img class="rounded img-thumbnail" src="/images/account.png" alt="account" style="width:100px; heigh:100px;">
+                                    <img class="rounded img-thumbnail  account" src="/images/account.png" alt="account">
                                 </div>
                                 <div class="col-sm-9">
                                     <div class="w-100">
