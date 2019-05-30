@@ -12,15 +12,17 @@ class CategoryController extends Controller
     {
         $categories = Category::get();
         if (count($categories) == 0) {
-            return redirect(route('add_category_admin'));
+            return redirect()->route('add_category_admin');
         } else {
             return view('admin.admin_categories', compact('categories'));
         }
     }
+
     public function add_category_admin()
     {
         return view('admin.add_category');
     }
+
     public function store_category_admin(Request $request)
     {
         Category::create([

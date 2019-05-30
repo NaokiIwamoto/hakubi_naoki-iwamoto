@@ -11,6 +11,7 @@
                 <tr>
                     <th scope="col">Category</th>
                     <th scope="col">Describe</th>
+                    <th scope="col">Registered Words</th>
                     <th scope="col">Action</th>
                 </tr>
             </thead>
@@ -19,14 +20,15 @@
                 <tr>
                     <th scope="row">{{ $category->category }}</th>
                     <td>{{ $category->describe }}</td>
+                    <td>{{ $category->describe }}</td>
                     <td>
-                        <a class="btn btn-primary " href="#" role="button">
+                        <a class="btn btn-primary " href="{{ route('words_admin',['id' => $category->id]) }}" role="button">
                             <small>Add word</small>
                         </a>
-                        <a class="btn btn-primary " href="#" role="button">
+                        <a class="btn btn-primary " href="{{ route('edit_category_admin',['id' => $category->id]) }}" role="button">
                             <small>Edit</small>
                         </a>
-                        <a class="btn btn-primary " href="#" role="button">
+                        <a class="btn btn-primary " href="{{ route('delete_category_admin',['id' => $category->id]) }}" role="button">
                             <small>Delete</small>
                         </a>
                     </td>

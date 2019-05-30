@@ -23,6 +23,3 @@ Route::post('/admin/add_admin_user/register', 'UserController@admin_register')->
 Route::get('/admin/category', 'CategoryController@open_category_admin')->name('open_category_admin');
 Route::get('/admin/category/add_category', 'CategoryController@add_category_admin')->name('add_category_admin');
 Route::post('/admin/category/add_category/store', 'CategoryController@store_category_admin')->name('store_category_admin');
-Route::post('/admin/category/{id}/edit', 'CategoryController@store_category_admin')->name('edit_category_admin');
-Route::post('/admin/category/{id}/delete', 'CategoryController@store_category_admin')->name('delete_category_admin');
-Route::post('/admin/category/{id}/words', 'CategoryController@store_category_admin')->name('words_admin');
