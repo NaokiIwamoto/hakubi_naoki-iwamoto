@@ -21,6 +21,7 @@ class UserController extends Controller
             'admin' => true,
             'password' => Hash::make($request['password']),
         ]);
+
         return redirect('/home');
     }
 }

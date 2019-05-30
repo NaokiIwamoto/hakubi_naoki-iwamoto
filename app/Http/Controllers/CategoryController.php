@@ -29,6 +29,7 @@ class CategoryController extends Controller
             'create_user_id' => auth()->user()->id,
             'edit_user_id' => auth()->user()->id,
         ]);
+
         return redirect()->route('open_category_admin');
     }
 }
