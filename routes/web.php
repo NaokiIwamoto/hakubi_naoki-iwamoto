@@ -23,3 +23,12 @@ Route::post('/admin/add_admin_user/register', 'UserController@admin_register')->
 Route::get('/admin/category', 'CategoryController@open_category_admin')->name('open_category_admin');
 Route::get('/admin/category/add_category', 'CategoryController@add_category_admin')->name('add_category_admin');
 Route::post('/admin/category/add_category/store', 'CategoryController@store_category_admin')->name('store_category_admin');
+<<<<<<< Updated upstream
+=======
+Route::get('/admin/category/{id}/edit', 'CategoryController@edit_category_admin')->name('edit_category_admin');
+Route::post('/admin/category/{id}/update', 'CategoryController@update_category_admin')->name('update_category_admin');
+Route::get('/admin/category/{id}/delete', 'CategoryController@delete_category_admin')->name('delete_category_admin');
+Route::get('/admin/category/{id}/words', 'CategoryController@words_admin')->name('words_admin');
+Route::get('/admin/category/{id}/words/add', 'CategoryController@add_words_admin')->name('add_word_admin');
+Route::get('/admin/category/{id}/words/edit', 'CategoryController@edit_words_admin')->name('edit_word_admin');
+>>>>>>> Stashed changes

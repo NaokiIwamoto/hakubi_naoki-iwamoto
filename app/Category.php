@@ -10,4 +10,9 @@ class Category extends Model
     protected $fillable = [
         'category', 'describe', 'create_user_id', 'edit_user_id',
     ];
+
+    public function words_category_id()
+    {
+        return $this->belongsToMany('App\User', 'words', 'category_id');
+    }
 }

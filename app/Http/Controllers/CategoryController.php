@@ -34,4 +34,45 @@ class CategoryController extends Controller
 
         return redirect()->route('open_category_admin');
     }
+
+    public function edit_category_admin($id)
+    {
+        $category = Category::find($id);
+        return view('admin.edit_category', compact('category'));
+    }
+
+    public function update_category_admin($id, Request $request)
+    {
+        $category = Category::find($id);
+        $category->category = $request->input('category');
+        $category->edit_user_id = auth()->user()->id;
+        $category->describe = $request->input('describe');
+        $category->save();
+
+        return redirect()->route('open_category_admin');
+    }
+
+    public function delete_category_admin($id)
+    {
+        $category = Category::find($id);
+        $category->delete();
+
+        return back();
+    }
+
+    public function words_admin($id)
+    {
+        $category = Category::find($id);
+        $words = $id->words_category_id()->get();
+        if ($words == 0) {
+            return redirect()->route('add_word_admin', ['id' => $id]);
+        } else {
+            return view('admin.admin_words', compact('words', 'category'));
+        }
+    }
+
+    public function add_word_admin($id)
+    {
+        //
+    }
 }

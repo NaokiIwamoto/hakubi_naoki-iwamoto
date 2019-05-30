@@ -22,6 +22,7 @@
                     <td>{{ $category->describe }}</td>
                     <td>{{ $category->describe }}</td>
                     <td>
+<<<<<<< Updated upstream
                         <a class="btn btn-primary " href="{{ route('words_admin',['id' => $category->id]) }}" role="button">
                             <small>Add word</small>
                         </a>
@@ -29,6 +30,15 @@
                             <small>Edit</small>
                         </a>
                         <a class="btn btn-primary " href="{{ route('delete_category_admin',['id' => $category->id]) }}" role="button">
+=======
+                        <a class="btn btn-primary " href="{{ route('words_admin', ['id' => $category->id]) }}" role="button">
+                            <small>Add word</small>
+                        </a>
+                        <a class="btn btn-primary " href="{{ route('edit_category_admin', ['id' => $category->id]) }}" role="button">
+                            <small>Edit</small>
+                        </a>
+                        <a class="btn btn-primary " href="{{ route('delete_category_admin', ['id' => $category->id]) }}" role="button">
+>>>>>>> Stashed changes
                             <small>Delete</small>
                         </a>
                     </td>
