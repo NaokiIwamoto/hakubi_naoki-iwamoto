@@ -1,0 +1,7 @@
+
+#welcom_background {
+    background: linear-gradient(to Right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.7) 75%, rgba(0, 0, 0, 0.7)), url(/images/tokyo2020.jpg);
+    background-size: cover;
+    height: 500px;
+    max-width: 100%;
+}

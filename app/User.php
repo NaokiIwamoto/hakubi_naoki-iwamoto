@@ -16,7 +16,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'admin', 'password',
     ];
 
     /**
@@ -36,4 +36,14 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+
+    public function category_create_user()
+    {
+        return $this->belongsToMany('App\User', 'category', 'create_user_id');
+    }
+
+    public function category_edit_user()
+    {
+        return $this->belongsToMany('App\User', 'category', 'edit_user_id');
+    }
 }
