@@ -17,7 +17,8 @@ class CreateWordsTable extends Migration
             $table->increments('id');
             $table->unsignedInteger('category_id');
             $table->foreign('category_id')->references('id')->on('categories')->onDelete('cascade');
-            $table->string('word');
+            $table->string('word_japanese');
+            $table->string('word_english');
             $table->string('difficulty');
             $table->text('explain');
             $table->timestamps();

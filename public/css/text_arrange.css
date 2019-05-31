@@ -1,0 +1,6 @@
+.ftable {
+    display: flex;
+}
+.bottom {
+    align-self: flex-end;
+}

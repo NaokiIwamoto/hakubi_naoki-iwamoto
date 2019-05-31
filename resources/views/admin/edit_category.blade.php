@@ -31,7 +31,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">Describe</label>
 
                             <div class="col-md-6">
-                                <textarea name="describe" class="form-control{{ $errors->has('describe') ? ' is-invalid' : '' }}" id="" rows="10">{{ $category->describe }}</textarea>
+                                <textarea name="describe" class="form-control{{ $errors->has('describe') ? ' is-invalid' : '' }}" id="" rows="10" required>{{ $category->describe }}</textarea>
 
                                 @if ($errors->has('describe'))
                                 <span class="invalid-feedback" role="alert">
