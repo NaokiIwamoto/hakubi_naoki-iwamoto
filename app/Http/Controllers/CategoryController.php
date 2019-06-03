@@ -59,20 +59,4 @@ class CategoryController extends Controller
 
         return back();
     }
-
-    public function words_admin($id)
-    {
-        $category = Category::find($id);
-        $words = $id->words_category_id()->get();
-        if ($words == 0) {
-            return redirect()->route('add_word_admin', ['id' => $id]);
-        } else {
-            return view('admin.admin_words', compact('words', 'category'));
-        }
-    }
-
-    public function add_word_admin($id)
-    {
-        //
-    }
 }

@@ -6,9 +6,9 @@
 
 @section('content')
 <div class="container">
-    <div class="justify-content-between ftable">
-        <h1 class="text-center">Categories</h1>
-        <a class="bottom" href="{{ route('add_category_admin') }}">Add new category</a>
+    <div class="justify-content-between d-flex">
+        <h1 class=" text-center">Categories</h1>
+        <a class="align-self-end" href="{{ route('add_category_admin') }}">Add new category</a>
     </div>
     <div class="row justify-content-center">
         <table class="table table-hover">
