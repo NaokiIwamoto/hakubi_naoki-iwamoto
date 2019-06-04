@@ -18,7 +18,7 @@
                     <div class="card-body">
                         <div class="card-title">
                             <a href="{{ route('open_category_admin') }}">
-                                <h3><strong>Categorys</strong></h3>
+                                <h3><strong>Category</strong></h3>
                             </a>
                         </div>
                     </div>

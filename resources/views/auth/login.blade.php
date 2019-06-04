@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
+<div class="container pt-4 mt-4">
     <div class="row justify-content-center">
         <div class="col-md-6 border-right">
             <h1 class="display-4 text-center">Log in</h2>

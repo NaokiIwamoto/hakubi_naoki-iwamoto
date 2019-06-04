@@ -26,6 +26,9 @@ Route::post('/admin/category/add_category/store', 'CategoryController@store_cate
 Route::get('/admin/category/{id}/edit', 'CategoryController@edit_category_admin')->name('edit_category_admin');
 Route::post('/admin/category/{id}/update', 'CategoryController@update_category_admin')->name('update_category_admin');
 Route::get('/admin/category/{id}/delete', 'CategoryController@delete_category_admin')->name('delete_category_admin');
-Route::get('/admin/category/{id}/words', 'CategoryController@words_admin')->name('words_admin');
-Route::get('/admin/category/{id}/words/add', 'CategoryController@add_words_admin')->name('add_word_admin');
-Route::get('/admin/category/{id}/words/edit', 'CategoryController@edit_words_admin')->name('edit_word_admin');
+Route::get('/admin/category/{id}/words', 'WordController@words_admin')->name('words_admin');
+Route::get('/admin/category/{id}/words/add', 'WordController@add_word_admin')->name('add_word_admin');
+Route::post('/admin/category/{id}/words/add/store', 'WordController@store_word_admin')->name('store_word_admin');
+Route::get('/admin/category/words/{word_id}/edit', 'WordController@edit_word_admin')->name('edit_word_admin');
+Route::post('/admin/category/words/{word_id}/edit/update', 'WordController@update_word_admin')->name('update_word_admin');
+Route::get('/admin/category/words/{word_id}/delete', 'WordController@delete_word_admin')->name('delete_word_admin');
