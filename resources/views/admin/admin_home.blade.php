@@ -13,6 +13,7 @@
                     <div class="py-1">
                         <img class="rounded img-thumbnail account" src="/images/account.png" alt="account">
                     </div>
+                    <h4 class="py-3">{{ auth()->user()->name }}</h4>
                     <div class="dropdown-divider py-1"></div>
                     <div class="card-body">
                         <div class="card-title">
@@ -45,6 +46,9 @@
                                             <small>Registrated : {{ \Carbon\Carbon::createFromTimeStamp(strtotime($admin->created_at)) ->diffForHumans() }}</small>
                                         </div>
                                         <div class="dropdown-divider py-1"></div>
+                                        <a class="btn btn-primary " href="#" role="button">
+                                            <small>Remove admin</small>
+                                        </a>
                                     </div>
                                 </div>
                             </div>

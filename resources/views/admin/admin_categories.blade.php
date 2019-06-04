@@ -1,11 +1,16 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/text_arrange.css') }}">
+@endsection
+
 @section('content')
 <div class="container">
+    <div class="justify-content-between d-flex">
+        <h1 class=" text-center">Categories</h1>
+        <a class="align-self-end" href="{{ route('add_category_admin') }}">Add new category</a>
+    </div>
     <div class="row justify-content-center">
-        <h1>Categories</h1>
-        <a href="{{ route('add_category_admin') }}">Add new category</a>
-        <br>
         <table class="table table-hover">
             <thead class="thead-dark">
                 <tr>
@@ -20,7 +25,7 @@
                 <tr>
                     <th scope="row">{{ $category->category }}</th>
                     <td>{{ $category->describe }}</td>
-                    <td>{{ $category->describe }}</td>
+                    <td>Still making function</td>
                     <td>
                         <a class="btn btn-primary " href="{{ route('words_admin',['id' => $category->id]) }}" role="button">
                             <small>Add word</small>

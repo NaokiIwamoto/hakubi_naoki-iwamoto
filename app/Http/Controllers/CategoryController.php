@@ -34,4 +34,29 @@ class CategoryController extends Controller
 
         return redirect()->route('open_category_admin');
     }
+
+    public function edit_category_admin($id)
+    {
+        $category = Category::find($id);
+        return view('admin.edit_category', compact('category'));
+    }
+
+    public function update_category_admin($id, Request $request)
+    {
+        $category = Category::find($id);
+        $category->category = $request->input('category');
+        $category->edit_user_id = auth()->user()->id;
+        $category->describe = $request->input('describe');
+        $category->save();
+
+        return redirect()->route('open_category_admin');
+    }
+
+    public function delete_category_admin($id)
+    {
+        $category = Category::find($id);
+        $category->delete();
+
+        return back();
+    }
 }

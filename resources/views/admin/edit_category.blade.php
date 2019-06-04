@@ -10,14 +10,14 @@
                 </div>
 
                 <div class="card-body">
-                    <form method="POST" action="{{ route('store_category_admin') }}">
+                    <form method="POST" action="{{ route('update_category_admin',['id' => $category->id]) }}">
                         @csrf
 
                         <div class="form-group row">
                             <label for="name" class="col-md-4 col-form-label text-md-right">Category name</label>
 
                             <div class="col-md-6">
-                                <input id="name" type="text" class="form-control{{ $errors->has('category') ? ' is-invalid' : '' }}" name="category" value="" required autofocus>
+                                <input id="name" type="text" class="form-control{{ $errors->has('category') ? ' is-invalid' : '' }}" name="category" value="{{ $category->category }}" required autofocus>
 
                                 @if ($errors->has('category'))
                                 <span class="invalid-feedback" role="alert">
@@ -31,7 +31,7 @@
                             <label for="email" class="col-md-4 col-form-label text-md-right">Describe</label>
 
                             <div class="col-md-6">
-                                <textarea name="describe" class="form-control{{ $errors->has('describe') ? ' is-invalid' : '' }}" id="" rows="10" required></textarea>
+                                <textarea name="describe" class="form-control{{ $errors->has('describe') ? ' is-invalid' : '' }}" id="" rows="10" required>{{ $category->describe }}</textarea>
 
                                 @if ($errors->has('describe'))
                                 <span class="invalid-feedback" role="alert">
