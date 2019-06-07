@@ -13,6 +13,6 @@ class Category extends Model
 
     public function words_category_id()
     {
-        return $this->belongsToMany('App\User', 'words', 'category_id');
+        return $this->belongsToMany('App\Category', 'words', 'category_id');
     }
 }
