@@ -25,9 +25,6 @@
                     <th scope="row">{{ $word->japanese }}</th>
                     <td>{{ $word->explain }}</td>
                     <td>
-                        <a class="btn btn-primary " href="#" role="button">
-                            <small>Edit option</small>
-                        </a>
                         <a class="btn btn-primary " href="{{ route('edit_word_admin',['word_id' => $word->id]) }}" role="button">
                             <small>Edit</small>
                         </a>
