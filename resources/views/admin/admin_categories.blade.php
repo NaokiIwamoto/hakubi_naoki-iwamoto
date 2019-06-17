@@ -25,7 +25,7 @@
                 <tr>
                     <th scope="row">{{ $category->category }}</th>
                     <td>{{ $category->describe }}</td>
-                    <td></td>
+                    <td>{{ $category->words_category_id()->count() }}</td>
                     <td>
                         <a class="btn btn-primary " href="{{ route('words_admin',['id' => $category->id]) }}" role="button">
                             <small>Add word</small>

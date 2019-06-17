@@ -18,7 +18,7 @@ class CreateOptionsTable extends Migration
             $table->unsignedInteger('word_id');
             $table->foreign('word_id')->references('id')->on('words')->onDelete('cascade');
             $table->string('option_name');
-            $table->string('ture_or_false');
+            $table->boolean('true_or_false');
             $table->timestamps();
         });
     }
