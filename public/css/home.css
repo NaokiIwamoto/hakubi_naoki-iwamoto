@@ -2,3 +2,188 @@
     width:100px;
     height:100px;
 }
+
+.category {
+    background: linear-gradient(rgba(255, 255, 255, 0.6), rgba(255, 255, 255, 0.6)),url(/images/olympic.png);
+    background-size: contain;
+    background-position:right;
+    background-repeat: no-repeat;
+    padding-right: 50px;
+    padding-bottom: 18px;
+    background-position: right bottom; 
+    z-index: 10;
+    position: relative;
+}
+
+.divider{
+    z-index: 30;
+    position: relative;
+}
+
+.btn-circle-stitch-beginner {
+    display: inline-block;
+    text-decoration: none;
+    background: rgb(0, 129, 200);
+    color: #FFF;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 5px rgb(0, 129, 200);
+    border: dashed 1px #FFF;
+    transition: .4s;
+    z-index: 20;
+    position: relative;
+}
+
+.btn-circle-stitch-beginner:hover {
+    background: rgba(0, 130, 200, 0.39);
+    box-shadow: 0px 0px 0px 5px rgba(0, 130, 200, 0.39);
+}
+
+.btn-circle-stitch-intermidiate {
+    display: inline-block;
+    text-decoration: none;
+    background: rgb(0, 166, 81);
+    color: #FFF;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 5px rgb(0, 166, 81);
+    border: dashed 1px #FFF;
+    transition: .4s;
+}
+
+.btn-circle-stitch-intermidiate:hover {
+    background: rgba(0, 166, 81, 0.39);
+    box-shadow: 0px 0px 0px 5px rgba(0, 166, 81, 0.39);
+}
+
+.btn-circle-stitch-advance {
+    display: inline-block;
+    text-decoration: none;
+    background: rgb(238, 51, 78);
+    color: #FFF;
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    border-radius: 50%;
+    text-align: center;
+    overflow: hidden;
+    box-shadow: 0px 0px 0px 5px rgb(238, 51, 78);
+    border: dashed 1px #FFF;
+    transition: .4s;
+}
+
+.btn-circle-stitch-advance:hover {
+    background: rgba(238, 51, 78, 0.39);
+    box-shadow: 0px 0px 0px 5px rgba(238, 51, 78, 0.39);
+}
+
+.ribbon12-wrapper {  
+  display: block;
+  position: relative;
+  margin: 15px auto;
+  padding: 10px 0;
+  width: 300px;
+  background: #f1f1f1;
+  }
+
+.ribbon12 {
+  display: inline-block;
+  position: relative;
+  box-sizing: border-box;
+  padding: 10px;
+  margin: 0 0 0 -20px;
+  width: calc(100% + 20px);
+  font-size: 22px;
+  color: white;
+  background: rgb(0, 129, 200);
+  box-shadow: 0 2px 2px rgba(0, 0, 0, 0.2);
+}
+
+.ribbon12:before {
+  position: absolute;
+  content: '';
+  top: 100%;
+  left: 0;
+  border: none;
+  border-bottom: solid 15px transparent;
+  border-right: solid 20px rgb(0, 32, 99);
+}
+
+h1 {
+  border-bottom: solid 3px black;
+}
+
+.category-titel {
+
+}
+
+.category-card{
+    -webkit-box-shadow: 0 10px 6px -6px #777;
+       -moz-box-shadow: 0 10px 6px -6px #777;
+            box-shadow: 0 10px 6px -6px #777;
+    padding: 1em 0.5em;
+    margin: 1em 1em 1em 1em;
+    color: #494949;
+    background: transparent;
+    border-left: solid 5px #7db4e6;
+}
+
+body{
+    background:#eee;
+    margin-top:20px;
+}
+
+html body .m-t-30 {
+    margin-top: 30px;
+}
+html body .m-t-10 {
+    margin-top: 10px;
+}
+html body .font-medium {
+    font-weight: 500;
+}
+.img-circle {
+    border-radius: 100%;
+}
+h4 {
+    line-height: 22px;
+    font-size: 18px;
+}
+
+.card .card-subtitle {
+    font-weight: 300;
+    margin-bottom: 15px;
+    color: #99abb4;
+}
+a.link {
+    color: #455a64;
+}
+.btn-secondary, .btn-secondary.disabled {
+    -webkit-box-shadow: 0 2px 2px 0 rgba(169, 169, 169, 0.14), 0 3px 1px -2px rgba(169, 169, 169, 0.2), 0 1px 5px 0 rgba(169, 169, 169, 0.12);
+    box-shadow: 0 2px 2px 0 rgba(169, 169, 169, 0.14), 0 3px 1px -2px rgba(169, 169, 169, 0.2), 0 1px 5px 0 rgba(169, 169, 169, 0.12);
+    -webkit-transition: 0.2s ease-in;
+    -o-transition: 0.2s ease-in;
+    transition: 0.2s ease-in;
+    background-color: #ffffff;
+    color: #67757c;
+    border-color: #b1b8bb;
+}
+.btn-circle {
+    border-radius: 100%;
+    width: 40px;
+    height: 40px;
+    padding: 10px;
+}
+.btn {
+    padding: 7px 12px;
+    cursor: pointer;
+}
+                        

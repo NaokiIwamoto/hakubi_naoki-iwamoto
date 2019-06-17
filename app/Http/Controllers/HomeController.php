@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
+use App\Category;
 
 class HomeController extends Controller
 {
@@ -27,10 +28,11 @@ class HomeController extends Controller
     {
         if (auth()->user()->admin == True) {
             $auth_id = Auth::user()->id;
-            $admins = User::where('admin',true)->where('id', '!=', $auth_id)->get();
-            return view('admin.admin_home',compact('admins'));
+            $admins = User::where('admin', true)->where('id', '!=', $auth_id)->get();
+            return view('admin.admin_home', compact('admins'));
         } else {
-            return view('home');
+            $categories = Category::get();
+            return view('home', compact('categories'));
         }
     }
 }
