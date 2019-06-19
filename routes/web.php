@@ -35,21 +35,11 @@ Route::post('/admin/category/{id}/words/add/store', 'WordController@store_word_a
 Route::get('/admin/category/words/{word_id}/edit', 'WordController@edit_word_admin')->name('edit_word_admin');
 Route::post('/admin/category/words/{word_id}/edit/update', 'WordController@update_word_admin')->name('update_word_admin');
 Route::get('/admin/category/words/{word_id}/delete', 'WordController@delete_word_admin')->name('delete_word_admin');
-<<<<<<< Updated upstream
-
-=======
->>>>>>> Stashed changes
 
 Route::get('/admin/category/{word_id}/option/add', 'WordController@add_option_admin')->name('add_option_admin');
 Route::post('/admin/category/{word_id}/option/add/store', 'WordController@store_option_admin')->name('store_option_admin');
 Route::get('/admin/category/{word_id}/optioin/edit', 'WordController@edit_option_admin')->name('edit_option_admin');
 Route::post('/admin/category/{word_id}/option/edit/update', 'WordController@update_option_admin')->name('update_option_admin');
-<<<<<<< Updated upstream
-
-
-Route::get('/user/edit', 'UserController@edit_profile')->name('edit_profile');
-Route::post('/user/update', 'UserController@update_profile')->name('update_profile');
-=======
 
 Route::get('/user/edit', 'UserController@edit_profile')->name('edit_profile');
 Route::post('/user/update', 'UserController@update_profile')->name('update_profile');
@@ -67,4 +57,3 @@ Route::get('/user/lesson/show/lesson={lesson_id}&index={index}', 'LessonControll
 Route::get('/user/lesson/answer/lesson={lesson_id}&index={index}&option={option_id}', 'LessonController@lesson_answer')->name('lesson_answer');
 Route::get('/user/lesson/result/lesson={lesson_id}', 'LessonController@lesson_result')->name('lesson_result');
 Route::get('/user/learned/{id}', 'LessonController@learned_words')->name('learned_words');
->>>>>>> Stashed changes
