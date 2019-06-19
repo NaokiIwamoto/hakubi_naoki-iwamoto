@@ -51,9 +51,12 @@ Route::get('/users', 'UserController@users_list')->name('users_list');
 
 Route::get('/user/{id}/follow', 'UserController@follow')->name('follow');
 Route::get('/user/{id}/unfollow', 'UserController@unfollow')->name('unfollow');
+<<<<<<< Updated upstream
 
 Route::get('/user/lesson/category={category_id}&difficulty={difficulty}', 'LessonController@lesson_create')->name('lesson_create');
 Route::get('/user/lesson/show/lesson={lesson_id}&index={index}', 'LessonController@lesson_show')->name('lesson_show');
 Route::get('/user/lesson/answer/lesson={lesson_id}&index={index}&option={option_id}', 'LessonController@lesson_answer')->name('lesson_answer');
 Route::get('/user/lesson/result/lesson={lesson_id}', 'LessonController@lesson_result')->name('lesson_result');
 Route::get('/user/learned/{id}', 'LessonController@learned_words')->name('learned_words');
+=======
+>>>>>>> Stashed changes
