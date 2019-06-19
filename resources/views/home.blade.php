@@ -12,8 +12,10 @@
             <div class="card">
                 <div class="card-body">
                     <center class="m-t-30">
+                        <a href="{{ route('edit_icon') }}">
+                            <img src="/images/account/{{ auth()->user()->icon }}" class="img-circle" width="150" height="150">
+                        </a>
                         <a href="{{ route('edit_profile')}}" class="link">
-                            <img src="/images/account.png" class="img-circle" width="150">
                             <h3 class="card-title m-t-10">{{ auth()->user()->name }}</h4>
                         </a>
                         <div class="row text-center justify-content-md-center">

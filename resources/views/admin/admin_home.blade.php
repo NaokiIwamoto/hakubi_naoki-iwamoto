@@ -11,7 +11,7 @@
             <div class="rounded p-4" style="background-color:white">
                 <div class="body text-center">
                     <div class="py-1">
-                        <img class="rounded img-thumbnail account" src="/images/account.png" alt="account">
+                        <img class="rounded img-thumbnail account" src="/images/account/account.png" alt="account">
                     </div>
                     <h4 class="py-3">{{ auth()->user()->name }}</h4>
                     <div class="dropdown-divider py-1"></div>

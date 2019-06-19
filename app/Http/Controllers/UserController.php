@@ -6,8 +6,8 @@ use Illuminate\Http\Request;
 use App\User;
 use Illuminate\Support\Facades\Hash;
 use App\Http\Requests\FromSendRequest;
-use App\Http\Requests\EditProfileRequest;
 use Illuminate\Support\Facades\Auth;
+use Image;
 
 class UserController extends Controller
 {
@@ -34,14 +34,31 @@ class UserController extends Controller
         return view('user.edit_profile', compact('user'));
     }
 
-    public function update_profile(Request $request)
+    public function update_profile(FromSendRequest $request)
     {
-        $request->photo->storeAs('public/images', Auth::id() . '.jpg');
-
         $user = Auth::user();
         $user->name = $request->input('name');
         $user->email = $request->input('email');
         $user->password =  Hash::make($request->input('password'));
+        $user->save();
+
+        return redirect('/home');
+    }
+
+    public function edit_icon()
+    {
+        $user = Auth::user();
+        return view('user.edit_icon', compact('user'));
+    }
+
+    public function update_icon(Request $request)
+    {
+        $icon = $request->icon;
+        $filename = time() . '.' . $icon->getClientOriginalExtension();
+        request()->icon->move(public_path('/images/account/'), $filename);
+
+        $user = Auth::user();
+        $user->icon = $filename;
         $user->save();
 
         return redirect('/home');
