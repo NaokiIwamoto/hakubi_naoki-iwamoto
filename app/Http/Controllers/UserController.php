@@ -63,4 +63,23 @@ class UserController extends Controller
 
         return redirect('/home');
     }
+
+    public function users_list()
+    {
+        $users = User::where('admin', false)->where('id', '!=', auth()->user()->id)->paginate(10);
+        return view('user.users_list', compact('users'));
+    }
+
+    public function follow($id)
+    {
+        $user = User::find($id);
+        Auth::user()->following()->save($user);
+        return back();
+    }
+
+    public function unfollow($id)
+    {
+        auth()->user()->following()->detach($id);
+        return back();
+    }
 }
