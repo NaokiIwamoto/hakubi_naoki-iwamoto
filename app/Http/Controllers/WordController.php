@@ -38,7 +38,7 @@ class WordController extends Controller
 
         $request->session()->regenerateToken();
 
-        return redirect()->route('add_option_admin',['word_id'=>$word->id]);
+        return redirect()->route('add_option_admin', ['word_id' => $word->id]);
     }
 
     public function edit_word_admin($word_id)
@@ -69,29 +69,29 @@ class WordController extends Controller
     public function add_option_admin($word_id)
     {
         $word = Word::find($word_id);
-        return view('admin.add_option',compact('word'));
+        return view('admin.add_option', compact('word'));
     }
 
-    public function store_option_admin($word_id,Request $request)
+    public function store_option_admin($word_id, Request $request)
     {
         $word = Word::find($word_id);
-
         for ($i = 1; $i <= 3; $i++) {
             if ($i == 1) {
                 $_result = true;
-            }else {
+            } else {
                 $_result = false;
             }
-                $option = 'option'.$i;
-                Option::create([
-                    'word_id' => $word->id,
-                    'option_name' => $request->$option,
-                    'true_or_false' => $_result
-                ]);
+            $option = 'option' . $i;
+            Option::create([
+                'word_id' => $word->id,
+                'correct_answer' => $request->option1,
+                'option_name' => $request->$option,
+                'true_or_false' => $_result
+            ]);
         }
 
         $request->session()->regenerateToken();
-        
+
         return redirect()->route('words_admin', ['id' => $word->category_id]);
     }
 
@@ -100,7 +100,7 @@ class WordController extends Controller
         $word = Word::find($word_id);
         $options = $word->options_word_id()->get();
 
-        return view('admin.edit_option', compact('options','word'));
+        return view('admin.edit_option', compact('options', 'word'));
     }
 
     public function update_option_admin($word_id,  Request $request)
@@ -110,7 +110,8 @@ class WordController extends Controller
 
         $i = 1;
         foreach ($options as $option) {
-            $name = 'option'.$i;
+            $name = 'option' . $i;
+            $option->correct_answer = $request->input('option1');
             $option->option_name = $request->input($name);
             $option->save();
             $i += 1;

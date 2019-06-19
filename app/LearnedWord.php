@@ -4,13 +4,13 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Option extends Model
+class LearnedWord extends Model
 {
     protected $fillable = [
-        'word_id', 'option_name', 'correct_answer', 'true_or_false',
+        'word_id', 'user_id',
     ];
 
-    public function optionGetWord()
+    public function learnedwordGetWord()
     {
         return $this->belongsTo('App\Word', 'word_id', 'id');
     }

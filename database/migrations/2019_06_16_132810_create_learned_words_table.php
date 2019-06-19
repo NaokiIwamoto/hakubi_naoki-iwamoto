@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateOptionsTable extends Migration
+class CreateLearnedWordsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,12 @@ class CreateOptionsTable extends Migration
      */
     public function up()
     {
-        Schema::create('options', function (Blueprint $table) {
+        Schema::create('learned_words', function (Blueprint $table) {
             $table->increments('id');
             $table->unsignedInteger('word_id');
             $table->foreign('word_id')->references('id')->on('words')->onDelete('cascade');
-            $table->string('correct_answer');
-            $table->string('option_name');
-            $table->boolean('true_or_false');
+            $table->unsignedInteger('user_id');
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -31,10 +30,13 @@ class CreateOptionsTable extends Migration
      */
     public function down()
     {
-        Schema::table('options', function (Blueprint $table) {
+        Schema::table('learned_words', function (Blueprint $table) {
             $table->dropForeign(['word_id']);
         });
+        Schema::table('learned_words', function (Blueprint $table) {
+            $table->dropForeign(['user_id']);
+        });
 
-        Schema::dropIfExists('options');
+        Schema::dropIfExists('learned');
     }
 }
