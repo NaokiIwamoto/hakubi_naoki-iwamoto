@@ -22,14 +22,14 @@
                             <div class="col-4">
                                 <a href="javascript:void(0)" class="link">
                                     <i class="fa fa-user"></i><br>
-                                    <font class="font-medium">???</font><br>
+                                    <font class="font-medium">{{ auth()->user()->following()->count() }}</font><br>
                                     <small class="text-muted p-t-30 db">Following</small>
                                 </a>
                             </div>
                             <div class="col-4">
                                 <a href="javascript:void(0)" class="link">
                                     <i class="fa fa-image"></i><br>
-                                    <font class="font-medium">???</font><br>
+                                    <font class="font-medium">{{ auth()->user()->follower()->count() }}</font><br>
                                     <small class="text-muted p-t-30 db">Follower</small>
                                 </a>
                             </div>
@@ -43,14 +43,9 @@
                     <small class="text-muted">Email address</small>
                     <h6>{{ auth()->user()->email }}</h6>
                     <small class="text-muted p-t-30 db">Registrate</small>
-                    <h6>+91 654 784 547</h6>
+                    <h6>{{ \Carbon\Carbon::createFromTimeStamp(strtotime(auth()->user()->created_at)) ->diffForHumans() }}</h6>
                     <small class="text-muted p-t-30 db">Leaned word</small>
-                    <h6>???</h6>
-                    <small class="text-muted p-t-30 db">Social Profile</small>
-                    <br>
-                    <button class="btn btn-circle btn-secondary"><i class="fa fa-facebook"></i></button>
-                    <button class="btn btn-circle btn-secondary"><i class="fa fa-twitter"></i></button>
-                    <button class="btn btn-circle btn-secondary"><i class="fa fa-youtube"></i></button>
+                    <h6><a href="{{ route('learned_words',['id' => auth()->user()->id]) }}">{{ auth()->user()->userGetLearned()->count() }}</a></h6>
                 </div>
             </div>
         </div>
@@ -69,17 +64,17 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-4 text-center">
-                                <a href="#" class="btn-circle-stitch-beginner">
+                                <a class="btn-circle-stitch-beginner" href="{{ route('lesson_create',['category_id'=>$category->id,'difficulty'=>1]) }}">
                                     Beginner
                                 </a>
                             </div>
                             <div class="col-sm-4 text-center">
-                                <a class="btn-circle-stitch-intermidiate" href="#">
+                                <a class="btn-circle-stitch-intermidiate" href="{{ route('lesson_create',['category_id'=>$category->id,'difficulty'=>2]) }}">
                                     Intermidiate
                                 </a>
                             </div>
                             <div class="col-sm-4 text-center">
-                                <a class="btn-circle-stitch-advance" href="#">
+                                <a class="btn-circle-stitch-advance" href="{{ route('lesson_create',['category_id'=>$category->id,'difficulty'=>3]) }}">
                                     Advance
                                 </a>
                             </div>
