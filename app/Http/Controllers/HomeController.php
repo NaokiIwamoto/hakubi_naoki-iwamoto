@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\User;
 use App\Category;
+use App\LearnedWord;
 use Illuminate\Support\Facades\Storage;
 
 
@@ -39,6 +40,7 @@ class HomeController extends Controller
 
     public function user_home()
     {
+        $learned = auth()->user()->userGetLearned()->count();
         $categories = Category::get();
         return view('home', compact('categories'));
     }
