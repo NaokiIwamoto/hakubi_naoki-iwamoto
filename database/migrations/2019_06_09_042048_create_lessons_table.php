@@ -31,10 +31,10 @@ class CreateLessonsTable extends Migration
      */
     public function down()
     {
-        Schema::table('relationships', function (Blueprint $table) {
+        Schema::table('lessons', function (Blueprint $table) {
             $table->dropForeign(['category_id']);
         });
-        Schema::table('relationships', function (Blueprint $table) {
+        Schema::table('lessons', function (Blueprint $table) {
             $table->dropForeign(['user_id']);
         });
 
