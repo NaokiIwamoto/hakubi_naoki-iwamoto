@@ -13,14 +13,17 @@ class LessonController extends Controller
 {
     public function lesson_create($category_id, $difficulty)
     {
-        $lesson = Lesson::Create([
+        $lesson = Lesson::firstOrCreate([
             'category_id' => $category_id,
             'user_id' => auth()->user()->id,
             'difficulty' => $difficulty
         ]);
 
-        return redirect()->route('lesson_show', ['lesson_id' => $lesson->id, 'index' => 0]);
-
+        if ($lesson->wasRecentlyCreated()) {
+            return redirect()->route('lesson_show', ['lesson_id' => $lesson->id, 'index' => 0]);
+        } else {
+            return redirect()->route('lesson_result', ['lesson_id' => $lesson->id]);
+        }
     }
 
     public function lesson_show($lesson_id, $index)

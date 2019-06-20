@@ -27,13 +27,13 @@
                                 @if (auth()->user()->following()->find($user->id) !== null)
                                 <a class="btn btn-secondary " href="/user/{{$user->id}}/unfollow" role="button">
                                     <small>
-                                        <i class="fas fa-user-slash"></i>Unfollow
+                                        Unfollow
                                     </small>
                                 </a>
                                 @else
                                 <a class="btn btn-primary " href="/user/{{$user->id}}/follow" role="button">
                                     <small>
-                                        <i class="fas fa-user-plus"></i> Follow
+                                        Follow
                                     </small>
                                 </a>
                                 @endif

@@ -63,21 +63,49 @@
                             <p>{{ $category->describe }}</p>
                         </div>
                         <div class="row">
+
+                            @if($category->words_category_id()->where('difficulty',1)->count() == null)
+                            <div class="col-sm-4 text-center">
+                                <a class="btn-circle-stitch-beginner" href="">
+                                    Beginner
+                                </a>
+                            </div>
+                            @else
                             <div class="col-sm-4 text-center">
                                 <a class="btn-circle-stitch-beginner" href="{{ route('lesson_create',['category_id'=>$category->id,'difficulty'=>1]) }}">
                                     Beginner
                                 </a>
                             </div>
+                            @endif
+
+                            @if($category->words_category_id()->where('difficulty',2)->count() == null)
+                            <div class="col-sm-4 text-center">
+                                <a class="btn-circle-stitch-intermidiate" href="">
+                                    Intermidiate
+                                </a>
+                            </div>
+                            @else
                             <div class="col-sm-4 text-center">
                                 <a class="btn-circle-stitch-intermidiate" href="{{ route('lesson_create',['category_id'=>$category->id,'difficulty'=>2]) }}">
                                     Intermidiate
                                 </a>
                             </div>
+                            @endif
+
+                            @if($category->words_category_id->where('difficulty',3)->count() == null)
+                            <div class="col-sm-4 text-center">
+                                <a class="btn-circle-stitch-advance" href="">
+                                    Advance
+                                </a>
+                            </div>
+                            @else
                             <div class="col-sm-4 text-center">
                                 <a class="btn-circle-stitch-advance" href="{{ route('lesson_create',['category_id'=>$category->id,'difficulty'=>3]) }}">
                                     Advance
                                 </a>
                             </div>
+                            @endif
+
                         </div>
                     </div>
                     @endforeach
