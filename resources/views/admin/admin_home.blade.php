@@ -37,7 +37,7 @@
                         <div class="list-group-item list-group-item-action mb-3 rounded">
                             <div class="row">
                                 <div class="col-sm-3">
-                                    <img class="rounded img-thumbnail  account" src="/images/account.png" alt="account">
+                                    <img class="rounded img-thumbnail  account" src="/images/account/account.png" alt=" account">
                                 </div>
                                 <div class="col-sm-9">
                                     <div class="w-100">
