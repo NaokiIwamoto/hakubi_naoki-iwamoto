@@ -11,7 +11,7 @@
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-body">
-                    <center class="m-t-30">
+                    <div class="m-t-30">
                         <a href="{{ route('edit_icon') }}">
                             <img src="/images/account/{{ auth()->user()->icon }}" class="img-circle" width="150" height="150">
                         </a>
@@ -22,19 +22,19 @@
                             <div class="col-4">
                                 <a href="javascript:void(0)" class="link">
                                     <i class="fa fa-user"></i><br>
-                                    <font class="font-medium">{{ auth()->user()->following()->count() }}</font><br>
+                                    <p class="font-medium">{{ auth()->user()->following()->count() }}</p><br>
                                     <small class="text-muted p-t-30 db">Following</small>
                                 </a>
                             </div>
                             <div class="col-4">
                                 <a href="javascript:void(0)" class="link">
                                     <i class="fa fa-image"></i><br>
-                                    <font class="font-medium">{{ auth()->user()->follower()->count() }}</font><br>
+                                    <p class="font-medium">{{ auth()->user()->follower()->count() }}</p><br>
                                     <small class="text-muted p-t-30 db">Follower</small>
                                 </a>
                             </div>
                         </div>
-                    </center>
+                    </div>
                 </div>
                 <div>
                     <hr>
