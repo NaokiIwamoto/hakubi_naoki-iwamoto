@@ -37,6 +37,6 @@ class CreateLearnedWordsTable extends Migration
             $table->dropForeign(['user_id']);
         });
 
-        Schema::dropIfExists('learned');
+        Schema::dropIfExists('learned_words');
     }
 }
