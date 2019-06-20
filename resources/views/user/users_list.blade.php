@@ -13,7 +13,7 @@
                 <div class="row">
                     <div class="col-sm-3">
                         <a href="#">
-                            <img src="/images/account/{{ auth()->user()->icon }}" class="img-circle" width="100" height="100">
+                            <img src="/images/account/{{ $user->icon }}" class="img-circle" width="100" height="100">
                         </a>
                     </div>
                     <div class="col-sm-9">
