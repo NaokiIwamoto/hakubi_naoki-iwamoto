@@ -33,8 +33,13 @@ class HomeController extends Controller
             $admins = User::where('admin', true)->where('id', '!=', $auth_id)->get();
             return view('admin.admin_home', compact('admins'));
         } else {
-            $categories = Category::get();
-            return view('home', compact('categories'));
+            return redirect()->route('user_home');
         }
+    }
+
+    public function user_home()
+    {
+        $categories = Category::get();
+        return view('home', compact('categories'));
     }
 }

@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('css')
-<link href="/css/home.css" rel="stylesheet">
+<link href="/css/home.css') }}" rel="stylesheet">
 <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 @endsection
 
@@ -11,7 +11,7 @@
         <div class="col-sm-4">
             <div class="card">
                 <div class="card-body">
-                    <div class="m-t-30">
+                    <center class="m-t-30">
                         <a href="{{ route('edit_icon') }}">
                             <img src="/images/account/{{ auth()->user()->icon }}" class="img-circle" width="150" height="150">
                         </a>
@@ -22,19 +22,19 @@
                             <div class="col-4">
                                 <a href="javascript:void(0)" class="link">
                                     <i class="fa fa-user"></i><br>
-                                    <p class="font-medium">{{ auth()->user()->following()->count() }}</p><br>
+                                    <font class="font-medium">{{ auth()->user()->following()->count() }}</font><br>
                                     <small class="text-muted p-t-30 db">Following</small>
                                 </a>
                             </div>
                             <div class="col-4">
                                 <a href="javascript:void(0)" class="link">
                                     <i class="fa fa-image"></i><br>
-                                    <p class="font-medium">{{ auth()->user()->follower()->count() }}</p><br>
+                                    <font class="font-medium">{{ auth()->user()->follower()->count() }}</font><br>
                                     <small class="text-muted p-t-30 db">Follower</small>
                                 </a>
                             </div>
                         </div>
-                    </div>
+                    </center>
                 </div>
                 <div>
                     <hr>

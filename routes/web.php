@@ -20,6 +20,8 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/user/home', 'HomeController@user_home')->name('user_home');
+
 Route::get('/admin/add_admin_user', 'UserController@open_add_admin_page')->name('admin_add');
 Route::post('/admin/add_admin_user/register', 'UserController@admin_register')->name('admin_register');
 Route::get('/admin/category', 'CategoryController@open_category_admin')->name('open_category_admin');
