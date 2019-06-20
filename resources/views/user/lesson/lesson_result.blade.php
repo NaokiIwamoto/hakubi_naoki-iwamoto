@@ -29,8 +29,12 @@
                                 <th scope="row">{{ $answer->answerGetOption()->first()->optionGetWord()->first()->japanese }}</th>
                                 <td>{{ $answer->answerGetOption()->first()->correct_answer }}</td>
                                 <td>{{ $answer->answerGetOption()->first()->option_name }}</td>
-                                @if( $answer->answerGetOption()->first()->true_or_false)
+                                @if( $answer->answerGetOption()->first()->true_or_false )
                                 <td>〇</td>
+                                <?php
+                                $correct = 0;
+                                $correct += 1;
+                                ?>
                                 @else
                                 <td>×</td>
                                 @endif
@@ -38,7 +42,9 @@
                             @endforeach
                         </tbody>
                     </table>
-
+                    <a href="https://twitter.com/intent/tweet?url=https://hakubi.herokuapp.com/&text='I got {{ $correct }} out of {{ count($answers) }}．Do you wanna try?'" target="blank_">
+                        Share on Twiiter
+                    </a>
                 </div>
             </div>
         </div>
