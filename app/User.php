@@ -59,6 +59,6 @@ class User extends Authenticatable
 
     public function userGetLearned()
     {
-        return $this->hasMany('App\Learnedword', 'user_id', 'id');
+        return $this->hasMany('App\LearnedWord', 'user_id', 'id');
     }
 }
