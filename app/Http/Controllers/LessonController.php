@@ -19,7 +19,7 @@ class LessonController extends Controller
             'difficulty' => $difficulty
         ]);
 
-        if ($lesson->wasRecentlyCreated()) {
+        if ($lesson->wasRecentlyCreated) {
             return redirect()->route('lesson_show', ['lesson_id' => $lesson->id, 'index' => 0]);
         } else {
             return redirect()->route('lesson_result', ['lesson_id' => $lesson->id]);
