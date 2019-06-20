@@ -45,7 +45,7 @@
                     <small class="text-muted p-t-30 db">Registrate</small>
                     <h6>{{ \Carbon\Carbon::createFromTimeStamp(strtotime(auth()->user()->created_at))->diffForHumans() }}</h6>
                     <small class="text-muted p-t-30 db">Leaned word</small>
-                    <h6><a href="{{ route('learned_words',['id' => auth()->user()->id]) }}">{{ auth()->user()->userGetLearned()->count() }}</a></h6>
+                    <h6><a href="{{ route('learned_words',['id' => auth()->user()->id]) }}">{{ $learned }}</a></h6>
                 </div>
             </div>
         </div>

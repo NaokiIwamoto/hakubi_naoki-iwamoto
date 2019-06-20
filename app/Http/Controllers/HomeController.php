@@ -42,6 +42,6 @@ class HomeController extends Controller
     {
         $learned = auth()->user()->userGetLearned()->count();
         $categories = Category::get();
-        return view('home', compact('categories'));
+        return view('home', compact('categories', 'learned'));
     }
 }
