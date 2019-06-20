@@ -33,9 +33,8 @@ class HomeController extends Controller
             $admins = User::where('admin', true)->where('id', '!=', $auth_id)->get();
             return view('admin.admin_home', compact('admins'));
         } else {
-            $is_image = false;
             $categories = Category::get();
-            return view('home', compact('categories', 'is_image'));
+            return view('home', compact('categories'));
         }
     }
 }

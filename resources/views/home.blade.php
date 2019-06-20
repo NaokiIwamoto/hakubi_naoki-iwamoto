@@ -6,10 +6,6 @@
 @endsection
 
 @section('content')
-<?php
-ini_set("display_errors", 1);
-error_reporting(E_ALL);
-?>
 <div class="container pt-4 mt-4">
     <div class="row">
         <div class="col-sm-4">
