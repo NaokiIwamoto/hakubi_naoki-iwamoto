@@ -2,7 +2,6 @@
 
 @section('css')
 <link href="/css/home.css" rel="stylesheet">
-<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
 @endsection
 
 @section('content')
